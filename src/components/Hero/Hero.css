@@ -1,0 +1,80 @@
+.heroContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.heroTitle {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.heroTitle h1 {
+    font-weight: 800;
+    text-align: center;
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.heroTitle h1 section {
+    width: 80%; 
+    display: flex;
+    justify-content: center;
+}
+
+.heroTitle h1 section span {transition: .2s; display: flex; margin: 10px;}
+
+.heroTitle h1 section:nth-child(1) span:nth-child(1) {color: var(--blue);}
+.heroTitle h1 section:nth-child(1) span:nth-child(1):hover {
+    color: white;
+    text-shadow: 2px 0px 2px var(--blue), -2px 0px 2px var(--blue), 0px 2px 2px var(--blue), 0px -2px 2px var(--blue);
+    transform: translateY(-10px);
+}
+
+.heroTitle h1 section:nth-child(1) span:nth-child(2) {color: var(--golden);}
+.heroTitle h1 section:nth-child(1) span:nth-child(2):hover {
+    color: white;
+    text-shadow: 2px 0px 2px var(--golden), -2px 0px 2px var(--golden), 0px 2px 2px var(--golden), 0px -2px 2px var(--golden);
+}
+
+.heroTitle h1 section:nth-child(2) span:hover{
+    color: white;
+    text-shadow: 2px 0px 2px black, -2px 0px 2px black, 0px 2px 2px black, 0px -2px 2px black;
+}
+
+.heroButton a{
+    text-decoration: none;
+    font-size: 2vw;
+    color: black;
+    font-weight: 500;
+    transition: .2s;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px transparent;
+    display: flex;
+    border: 2px solid black;
+}
+
+.heroButton a:hover {
+    background: black;
+    color: white;
+    box-shadow: 5px 5px 10px black;
+    transform: translateY(-10px);
+}
+
+@media only screen and (max-width:991px) {
+    .heroTitle section span {
+        font-size: 6vw;
+    }
+
+    .heroButton a {
+        font-size: 5vw;
+    }
+}
