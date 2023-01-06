@@ -11,7 +11,7 @@ const DoubleHydro = () => {
     const navigate = useNavigate()
 
   return (
-    <section onClick={() => navigate('./DHHZ')}>
+    <section onClick={() =>  handleClick(DHHZ)}>
             <Link to='./DHHZ' onClick={() => handleClick(DHHZ)}>Double Hydro Hu Tao-Zhongli</Link>
             {DHHZ.map((d,i) => (
               <div className="characterCard" key={i}>

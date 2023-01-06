@@ -11,7 +11,7 @@ const Morgana = () => {
   const navigate = useNavigate()
 
   return (
-    <section onClick={() => navigate('./Morgana')}>
+    <section onClick={() =>  handleClick(Morgana)}>
             <Link to='./Morgana' onClick={() => handleClick(Morgana)}>Morgana</Link>
             {Morgana.map((d,i) => (
               <div className="characterCard" key={i}>

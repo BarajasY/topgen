@@ -1,6 +1,6 @@
 .navbarContainer {
     width: 100vw;
-    height: 70px;
+    height: 50px;
     max-width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -8,7 +8,7 @@
     background: none;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    position: sticky;
+    position: fixed;
     z-index: 1;
 }
 

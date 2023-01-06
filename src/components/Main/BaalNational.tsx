@@ -10,7 +10,7 @@ const BaalNational = () => {
     const navigate = useNavigate();
 
   return (
-      <section onClick={() => navigate('./BaalNational')}>
+      <section onClick={() => handleClick(BaalNational)}>
         <Link to='./BaalNational' onClick={() => handleClick(BaalNational)}>BaalNational</Link>
         {BaalNational.map((d,i) => (
           <div className="characterCard" key={i}>

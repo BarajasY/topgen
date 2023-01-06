@@ -11,7 +11,7 @@ const MeltYu = () => {
   const navigate = useNavigate()
 
   return (
-    <section onClick={() => navigate('./MeltYu')}>
+    <section onClick={() =>  handleClick(MeltYu)}>
             <Link to='./MeltYu' onClick={() => handleClick(MeltYu)}>MeltYu</Link>
             {MeltYu.map((d,i) => (
               <div className="characterCard" key={i}>

@@ -11,7 +11,7 @@ const NilouBloom = () => {
   const navigate = useNavigate()
 
   return (
-    <section onClick={() => navigate('./NilouBloom')}>
+    <section onClick={() =>  handleClick(NilouBloom)}>
             <Link to='./NilouBloom' onClick={() => handleClick(NilouBloom)}>Nilou Bloom</Link>
             {NilouBloom.map((d,i) => (
               <div className="characterCard" key={i}>

@@ -11,7 +11,7 @@ const International = () => {
   const navigate = useNavigate()
 
   return (
-    <section onClick={() => navigate('./International')}>
+    <section onClick={() =>  handleClick(International)}>
       <Link to='./International' onClick={() => handleClick(International)}>International</Link>
       {International.map((d,i) => (
         <div className="characterCard" key={i}>
