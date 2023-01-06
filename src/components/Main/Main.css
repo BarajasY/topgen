@@ -6,6 +6,7 @@
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 .mainSubtitle {
@@ -34,30 +35,34 @@
 .mainTeams section {
     display: flex;
     width: fit-content;
-    padding: 30px 30px;
+    padding: 20px 30px;
     border: 2px solid black;
     border-radius: 15px;
-    margin: 10px;
+    margin: 20px 10px;
     transition: .2s;
+    position: relative;
 }
 
 .mainTeams section:hover {
     box-shadow: 2px 2px 10px black;
-    transform: translateY(-10px);
-}
-
-.mainTeams section h1 {
-    position: absolute;
-    transform: translate(-15px, -20px);
-    font-weight: 800;
-    font-size: 20px;
-}
-
-.mainTeams section h1:hover {
+    transform: translateY(-5px);
     cursor: pointer;
 }
 
-.mainTeams section h1:after {
+.mainTeams section a {
+    position: absolute;
+    transform: translate(-15px, -50px);
+    font-weight: 800;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.mainTeams section a:hover {
+    cursor: pointer;
+}
+
+.mainTeams section a:after {
     width: 0px;
     transition: .2s;
     height: 2px;
@@ -67,17 +72,19 @@
     display: block;
 }
 
-.mainTeams section h1:hover:after {
+.mainTeams section a:hover:after {
     width: 100%;
 }
 
 .characterCard {
     margin: 10px;
     border-radius: 15px;
+    transition: .2s;
 }
 
 .characterCard:hover {
     cursor: pointer;
+    transform: translateY(-5px);
 }
 
 .characterCard img{
@@ -101,14 +108,15 @@
 }
 
 .backgroundGradient {
-    width: 100px;
-    height: 10px;
+    width: 120px;
+    height: 0px;
     position: absolute;
     z-index: -1;
-    transform: translateY(calc(-100% - 5px));
-    transition: .2s;
+    transform: translateY(calc(-100% - 5px)) translateX(-10px);
+    transition: .4s;
     opacity: 0;
     border-radius: 15px;
+    filter: blur(15px);
 }
 
 .characterCard:hover .backgroundGradient {

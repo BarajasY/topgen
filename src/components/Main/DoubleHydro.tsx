@@ -1,0 +1,27 @@
+import React, { useContext } from 'react'
+import Context from '../../CharactersContext'
+import { CharactersContextInterface } from '../../types'
+import { Link, useNavigate } from 'react-router-dom';
+import './Main.css';
+
+const DoubleHydro = () => {
+
+    const {DHHZ} = useContext(Context) as CharactersContextInterface
+    const {handleClick} = useContext(Context) as CharactersContextInterface
+    const navigate = useNavigate()
+
+  return (
+    <section onClick={() => navigate('./DHHZ')}>
+            <Link to='./DHHZ' onClick={() => handleClick(DHHZ)}>Double Hydro Hu Tao-Zhongli</Link>
+            {DHHZ.map((d,i) => (
+              <div className="characterCard" key={i}>
+                <img src={d.data.icon} alt={d.data.name} />
+                <img src={d.data.element_i} alt={d.data.name} />
+                <div className="backgroundGradient" style={{background: `${d.data.gradient}`}} ></div>
+              </div>
+            ))}
+          </section>
+  )
+}
+
+export default DoubleHydro

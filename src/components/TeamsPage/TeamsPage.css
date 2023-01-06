@@ -1,0 +1,32 @@
+.teamsPageContainer {
+    width: 100vw;
+    height: 400vh;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.memberContent {
+    width: 100%;
+    height: 100vh;
+    max-width: 100%;
+}
+
+.memberContent img {
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.memberGradient {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+.memberBackground {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}

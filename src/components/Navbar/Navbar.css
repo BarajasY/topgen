@@ -1,0 +1,36 @@
+.navbarContainer {
+    width: 100vw;
+    height: 70px;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    z-index: 1;
+}
+
+.navbarContainer a {
+    text-decoration: none;
+    font-size: 2vw;
+    color: black;
+    font-weight: 800;
+    margin: 0px 3vw;
+    z-index: 1;
+}
+
+.navbarContainer a:after {
+    width: 0px;
+    height: 2px;
+    background: black;
+    position: relative;
+    content: '';
+    display: block;
+    transition: .2s;
+}
+
+.navbarContainer a:hover:after {
+    width: 100%;
+}

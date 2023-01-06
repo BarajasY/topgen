@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    max-width: 100%;
 }
 
 .heroTitle {

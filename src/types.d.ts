@@ -16,4 +16,16 @@ export interface ChildrenInterface {
 export interface CharactersContextInterface {
     Characters: DataInterface[]
     setCharacters: (value: DataInterface[]) => void
+    setSelectedTeam: (value: DataInterface[]) => void
+    setSavedTeam: (value: DataInterface[]) => void
+    handleClick: (A:DataInterface[]) => void
+    getData: () => DataInterface[]
+    Morgana: DataInterface[]
+    International: DataInterface[]
+    BaalNational: DataInterface[]
+    MeltYu: DataInterface[]
+    NilouBloom: DataInterface[]
+    DHHZ: DataInterface[]
+    SelectedTeam: DataInterface[]
+    SavedTeam: DataInterface[]
 }
