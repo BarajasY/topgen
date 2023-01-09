@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Context from '../../CharactersContext'
 import { CharactersContextInterface } from '../../types'
 import './Main.css';
@@ -8,10 +8,9 @@ const NilouBloom = () => {
 
   const {NilouBloom} = useContext(Context) as CharactersContextInterface
   const {handleClick} = useContext(Context) as CharactersContextInterface
-  const navigate = useNavigate()
 
   return (
-    <section onClick={() =>  handleClick(NilouBloom)}>
+    <Link to='./NilouBloom' id="teamsWrapper" onClick={() =>  handleClick(NilouBloom)}>
             <Link to='./NilouBloom' onClick={() => handleClick(NilouBloom)}>Nilou Bloom</Link>
             {NilouBloom.map((d,i) => (
               <div className="characterCard" key={i}>
@@ -20,7 +19,7 @@ const NilouBloom = () => {
                 <div className="backgroundGradient" style={{background: `${d.data.gradient}`}} ></div>
               </div>
             ))}
-    </section>
+    </Link>
   )
 }
 

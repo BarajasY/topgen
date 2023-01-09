@@ -1,17 +1,16 @@
 import React, { useContext } from 'react'
 import Context from '../../CharactersContext'
 import { CharactersContextInterface } from '../../types'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import './Main.css';
 
 const MeltYu = () => {
 
   const {MeltYu} = useContext(Context) as CharactersContextInterface
   const {handleClick} = useContext(Context) as CharactersContextInterface
-  const navigate = useNavigate()
 
   return (
-    <section onClick={() =>  handleClick(MeltYu)}>
+    <Link to='./MeltYu' id="teamsWrapper" onClick={() =>  handleClick(MeltYu)}>
             <Link to='./MeltYu' onClick={() => handleClick(MeltYu)}>MeltYu</Link>
             {MeltYu.map((d,i) => (
               <div className="characterCard" key={i}>
@@ -20,7 +19,7 @@ const MeltYu = () => {
                 <div className="backgroundGradient" style={{background: `${d.data.gradient}`}} ></div>
               </div>
             ))}
-          </section>
+          </Link>
   )
 }
 
