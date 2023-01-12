@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <div className="navbarContainer">
-        <Link to='/teams'>Genshin</Link>
+        <Link to='/teams'></Link>
     </div>
   )
 }

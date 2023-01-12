@@ -6,31 +6,49 @@
     justify-content: flex-start;
     align-items: center;
     background: none;
-    /* backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); */
     position: fixed;
     z-index: 1;
 }
 
 .navbarContainer a {
     text-decoration: none;
-    font-size: 2vw;
+    background-image: repeating-linear-gradient(90deg, hsla(57,0%,42%,0.09) 0px, hsla(57,0%,42%,0.09) 1px,transparent 1px, transparent 60px),repeating-linear-gradient(0deg, hsla(57,0%,42%,0.09) 0px, hsla(57,0%,42%,0.09) 1px,transparent 1px, transparent 60px),repeating-linear-gradient(0deg, hsla(57,0%,42%,0.09) 0px, hsla(57,0%,42%,0.09) 1px,transparent 1px, transparent 10px),repeating-linear-gradient(90deg, hsla(57,0%,42%,0.09) 0px, hsla(57,0%,42%,0.09) 1px,transparent 1px, transparent 10px),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20));
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     color: black;
     font-weight: 800;
-    margin: 0px 3vw;
+    margin: 0px 1vw;
     z-index: 1;
+    transition: .2s;
+    box-shadow: 5px 5px 10px transparent;
+}
+
+.navbarContainer a:hover {
+    background: white;
+    box-shadow: 5px 5px 10px black;
+}
+
+/* .navbarContainer a:hover:after {
+    transform: translate(0);
 }
 
 .navbarContainer a:after {
-    width: 0px;
-    height: 2px;
-    background: black;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     position: relative;
-    content: '';
+    content: 'G';
     display: block;
+    color: white;
     transition: .2s;
+    transform: translateY(-200%);
 }
 
 .navbarContainer a:hover:after {
     width: 100%;
-}
+} */
