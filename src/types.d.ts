@@ -28,4 +28,10 @@ export interface CharactersContextInterface {
     DHHZ: DataInterface[]
     SelectedTeam: DataInterface[]
     SavedTeam: DataInterface[]
+    FreezeKazuha: DataInterface[]
+    ChildeInternational: DataInterface[]
+    ShinraTensei: DataInterface[]
+    Sukokomon: DataInterface[]
+    XiaoDoubleGeo: DataInterface[]
+    RaidenSunfire: DataInterface[]
 }

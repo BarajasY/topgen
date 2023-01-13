@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
+import {AiOutlineArrowRight} from 'react-icons/ai'
 /* import { DataInterface } from '../../types'; */
 import './TeamsPage.css';
 
@@ -87,7 +88,10 @@ const TeamsPage = () => {
               </div>
               <div className="memberindexes">
                 <section>
-                  <h1 onClick={() => handleCurrent()}>{ParsedData[handleIndex(Current)].data.name}</h1>
+                  <article>
+                    <h1 onClick={() => handleCurrent()}>{ParsedData[handleIndex(Current)].data.name}</h1>
+                    <AiOutlineArrowRight className="arrowNext"/>
+                  </article>
                 </section>
                 <section>
                   <h1 onClick={() => setIndex(0)}>Description</h1>
@@ -95,7 +99,6 @@ const TeamsPage = () => {
                 </section>
               </div>
             </div>
-            <div className="memberBackground"></div>
           </motion.div>
       </motion.div>
     </motion.div>

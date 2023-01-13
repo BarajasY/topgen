@@ -6,6 +6,12 @@ import BaalNational from './BaalNational';
 import MeltYu from './MeltYu';
 import NilouBloom from './NilouBloom';
 import DoubleHydro from './DoubleHydro';
+import FreezeKazuha from './FreezeKazuha'
+import ChildeInternational from './ChildeInternational';
+import ShinraTensei from './ShinraTensei';
+import Sukokomon from './Sukokomon';
+import XiaoDG from './XiaoDG';
+import RaidenSunfire from './RaidenSunfire';
 import './Main.css';
 
 const Main = () => {
@@ -19,6 +25,12 @@ const Main = () => {
           <MeltYu/>
           <NilouBloom/>
           <DoubleHydro/>
+          <FreezeKazuha/>
+          <ChildeInternational/>
+          <ShinraTensei/>
+          <Sukokomon/>
+          <XiaoDG/>
+          <RaidenSunfire/>
         </div>
     </div>
   )

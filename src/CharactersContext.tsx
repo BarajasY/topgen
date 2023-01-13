@@ -14,6 +14,7 @@ export const ContextProvider = ({children}:ChildrenInterface) => {
         getDocs(charactersColl).then(res => {
           const charactersData = res.docs.map(doc => ({data: doc.data(), id:doc.id}))
           setCharacters(charactersData)
+          console.log(Characters)
         })
         .catch(err => console.log(err));
       }
@@ -28,9 +29,15 @@ export const ContextProvider = ({children}:ChildrenInterface) => {
       const MeltYu = Characters.filter(d => d.data.name === "Bennett" || d.data.name === "Ganyu" || d.data.name === "Zhongli" || d.data.name === "Xiangling")
       const NilouBloom = Characters.filter(d => d.data.name === "Nilou" || d.data.name === "Nahida" || d.data.name === "Sangonomiya Kokomi" || d.data.name === "Yelan")
       const DHHZ = Characters.filter(d => d.data.name === "Hu Tao" || d.data.name === "Yelan" || d.data.name === "Xingqiu" || d.data.name === "Zhongli")
+      const FreezeKazuha = Characters.filter(d => d.data.name === "Ayaka" || d.data.name === "Ganyu" || d.data.name === "Kaedehara Kazuha" || d.data.name === "Sangonomiya Kokomi")
+      const ChildeInternational = Characters.filter(d => d.data.name === "Tartaglia" || d.data.name === "Bennett" || d.data.name === "Kaedehara Kazuha" || d.data.name === "Xiangling")
+      const ShinraTensei = Characters.filter(d => d.data.name === "Ayaka" || d.data.name === "Sangonomiya Kokomi" || d.data.name === "Rosaria" || d.data.name === "Kaedehara Kazuha")
+      const Sukokomon = Characters.filter(d => d.data.name === "Sucrose" || d.data.name === "Sangonomiya Kokomi" || d.data.name === "Fischl" || d.data.name === "Xiangling")
+      const XiaoDoubleGeo = Characters.filter(d => d.data.name === "Xiao" || d.data.name === "Jean" || d.data.name === "Albedo" || d.data.name === "Zhongli")
+      const RaidenSunfire = Characters.filter(d => d.data.name === "Raiden Shogun" || d.data.name === "Kujou Sara" || d.data.name === "Bennett" || d.data.name === "Jean")
 
     return (
-        <Context.Provider value={{Characters, setCharacters, getData, Morgana, International, BaalNational, MeltYu, NilouBloom, DHHZ, SelectedTeam, setSelectedTeam, handleClick }}>
+        <Context.Provider value={{Characters, setCharacters, getData, Morgana, International, BaalNational, MeltYu, NilouBloom, DHHZ, SelectedTeam, setSelectedTeam, handleClick, FreezeKazuha, ChildeInternational, ShinraTensei, Sukokomon, XiaoDoubleGeo, RaidenSunfire }}>
             {children}
         </Context.Provider>
     )
