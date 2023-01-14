@@ -30,17 +30,24 @@ const TeamsPage = () => {
         <motion.div className="memberWrapper">
           <motion.div className="memberContent">
             <div className="member1st">
-              <motion.img src={ParsedData[Current].data.portrait} alt="Portrait" initial={{opacity: 0, x: -40}} whileInView={{opacity: 1, x: 0}} transition={{duration: .5}}/>
-              <motion.h1 
+              <motion.img 
+                src={ParsedData[Current].data.portrait} 
+                alt="Portrait" 
+                initial={{opacity: 0, x: -40}} 
+                whileInView={{opacity: 1, x: 0}} 
+                id="mainImage"
+                transition={{duration: .5}}/>
+              <motion.img src={ParsedData[Current].data.element_i}
               style={{ color: 'white'}} 
-              initial={{opacity:0, y: 40}} whileInView={{opacity: 1, y:0}} transition={{duration: .5}}>{ParsedData[Current].data.element_n}</motion.h1>
+              id="CharacterElement"
+              initial={{opacity:0, y: 40}} whileInView={{opacity: 1, y:0}} transition={{duration: .5}}/>
             </div>
             <div className="member2nd">
               <div className="memberinfo">
                 <div className="CharacterNameContainer">
                   <motion.h1 id="CharacterName" 
-                  style={{ color: 'white'}}
-                  initial={{opacity: 0, y: -30}} whileInView={{opacity: 1, y: 0}} transition={{duration: .5}}>{ParsedData[Current].data.name} <br /> {ParsedData[Current].data.jp}</motion.h1>
+                  initial={{opacity: 0, y: -30}} whileInView={{opacity: 1, y: 0}} transition={{duration: .5}}>{ParsedData[Current].data.name}</motion.h1>
+                  <h1 className="CharacterJP">{ParsedData[Current].data.jp}</h1>
                 </div>
                 <div className="CharacterDescriptionContainer">
                   <AnimatePresence>
@@ -52,32 +59,32 @@ const TeamsPage = () => {
                     transition={{duration:.5}}>{ParsedData[Current].data.description}</motion.p>,
                     1: 
                     <section>
-                      <motion.article initial={{x: -30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: -30}} transition={{duration: .5}}>
+                      <motion.article className="talent" initial={{x: -30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: -30}} transition={{duration: .5}}>
                         <img src={ParsedData[Current].data.active1_i} alt="Active" />
                         <h1>{ParsedData[Current].data.active1_n}</h1>
                       </motion.article>
-                      <motion.article initial={{x: 30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: 30}} transition={{duration: .5}}>
+                      <motion.article className="talent" initial={{x: 30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: 30}} transition={{duration: .5}}>
                         <img src={ParsedData[Current].data.active2_i} alt="Active" />
                         <h1>{ParsedData[Current].data.active2_n}</h1>
                       </motion.article>
-                      <motion.article initial={{x: -30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: -30}} transition={{duration: .5}}>
+                      <motion.article className="talent" initial={{x: -30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: -30}} transition={{duration: .5}}>
                         <img src={ParsedData[Current].data.passive1_i} alt="Active" />
                         <h1>{ParsedData[Current].data.passive1_n}</h1>
                       </motion.article>
-                      <motion.article initial={{x: 30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: 30}} transition={{duration: .5}}>
+                      <motion.article className="talent" initial={{x: 30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: 30}} transition={{duration: .5}}>
                         <img src={ParsedData[Current].data.passive2_i} alt="Active" />
                         <h1>{ParsedData[Current].data.passive2_n}</h1>
                       </motion.article>
                       {ParsedData[Current].data.passive3_i != null 
                       ?
-                      <motion.article initial={{x: -30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: -30}} transition={{duration: .5}}>
+                      <motion.article className="talent" initial={{x: -30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: -30}} transition={{duration: .5}}>
                         <img src={ParsedData[Current].data.passive3_i} alt="" />
                         <h1>{ParsedData[Current].data.passive3_n}</h1>
                       </motion.article>
                       :
                       <></>
                     }
-                      <motion.article initial={{x: 30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: 30}} transition={{duration: .5}}>
+                      <motion.article className="talent" initial={{x: 30, opacity: 0}} whileInView={{x: 0, opacity: 1}} exit={{opacity: 0, x: 30}} transition={{duration: .5}}>
                         <img src={ParsedData[Current].data.utility_i} alt="Active" />
                         <h1>{ParsedData[Current].data.utility_n}</h1>
                       </motion.article>
@@ -87,13 +94,13 @@ const TeamsPage = () => {
                 </div>
               </div>
               <div className="memberindexes">
-                <section>
+                <section id="nextArrow">
                   <article>
                     <h1 onClick={() => handleCurrent()}>{ParsedData[handleIndex(Current)].data.name}</h1>
                     <AiOutlineArrowRight className="arrowNext"/>
                   </article>
                 </section>
-                <section>
+                <section id="indexContainer">
                   <h1 onClick={() => setIndex(0)}>Description</h1>
                   <h1 onClick={() => setIndex(1)}>Talents</h1>
                 </section>
