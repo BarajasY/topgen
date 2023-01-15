@@ -37,17 +37,19 @@ const TeamsPage = () => {
                 whileInView={{opacity: 1, x: 0}} 
                 id="mainImage"
                 transition={{duration: .5}}/>
-              <motion.img src={ParsedData[Current].data.element_i}
-              style={{ color: 'white'}} 
-              id="CharacterElement"
-              initial={{opacity:0, y: 40}} whileInView={{opacity: 1, y:0}} transition={{duration: .5}}/>
             </div>
             <div className="member2nd">
               <div className="memberinfo">
                 <div className="CharacterNameContainer">
                   <motion.h1 id="CharacterName" 
                   initial={{opacity: 0, y: -30}} whileInView={{opacity: 1, y: 0}} transition={{duration: .5}}>{ParsedData[Current].data.name}</motion.h1>
-                  <h1 className="CharacterJP">{ParsedData[Current].data.jp}</h1>
+                  <h1 className="CharacterJP">
+                    {ParsedData[Current].data.jp}
+              <motion.img src={ParsedData[Current].data.element_i}
+              style={{ color: 'white'}} 
+              id="CharacterElement"
+              initial={{opacity:0, y: 40}} whileInView={{opacity: 1, y:0}} transition={{duration: .5}}/>
+                  </h1>
                 </div>
                 <div className="CharacterDescriptionContainer">
                   <AnimatePresence>
