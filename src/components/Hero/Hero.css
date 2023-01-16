@@ -12,70 +12,38 @@
     width: 80%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .heroTitle h1 {
     font-weight: 800;
+    display: flex;
+    height: fit-content;
     text-align: center;
     font-size: 4vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: fit-content;
+    position: relative;
 }
 
-.heroTitle h1 section {
-    width: 80%; 
+.heroTitle section {
     display: flex;
-    justify-content: center;
+    margin: 0px 10px;
 }
 
-.heroTitle h1 section span {transition: .2s; display: flex; margin: 10px;}
-
-.heroTitle h1 section:nth-child(1) span:nth-child(1) {color: var(--blue);}
-.heroTitle h1 section:nth-child(1) span:nth-child(1):hover {
-    color: white;
-    text-shadow: 2px 0px 2px var(--blue), -2px 0px 2px var(--blue), 0px 2px 2px var(--blue), 0px -2px 2px var(--blue);
-    transform: translateY(-10px);
-}
-
-.heroTitle h1 section:nth-child(1) span:nth-child(2) {color: var(--golden);}
-.heroTitle h1 section:nth-child(1) span:nth-child(2):hover {
-    color: white;
-    text-shadow: 2px 0px 2px var(--golden), -2px 0px 2px var(--golden), 0px 2px 2px var(--golden), 0px -2px 2px var(--golden);
-}
-
-.heroTitle h1 section:nth-child(2) span:hover{
-    color: white;
-    text-shadow: 2px 0px 2px black, -2px 0px 2px black, 0px 2px 2px black, 0px -2px 2px black;
-}
-
-.heroButton a{
-    text-decoration: none;
-    font-size: 2vw;
-    color: black;
-    font-weight: 500;
-    transition: .2s;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 5px 5px 10px transparent;
-    display: flex;
+.heroTitle div {
+    width: 1.5vw;
+    height: 1.5vw;
+    margin: 0px 10px;
+    border-radius: 50%;
+    background: white;
     border: 2px solid black;
 }
 
-.heroButton a:hover {
-    background: black;
-    color: white;
-    box-shadow: 5px 5px 10px black;
-    transform: translateY(-10px);
-}
-
 @media only screen and (max-width:991px) {
-    .heroTitle section span {
-        font-size: 6vw;
-    }
-
-    .heroButton a {
+    .heroTitle h1 {
         font-size: 5vw;
     }
 }

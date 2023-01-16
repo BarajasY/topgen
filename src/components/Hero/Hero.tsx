@@ -1,25 +1,54 @@
-import { motion } from 'framer-motion';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
+    const navigate = useNavigate();
+    const [Greeting, setGreeting] = useState<boolean>(true)
+    
+    useEffect(() => {
+        setTimeout(() => {
+            setGreeting(false)
+        }, 1000);
+        setTimeout(() => {
+            navigate('./teams')
+        }, 3000);
+    }, [navigate])
+    
+    
+
+
   return (
     <div className="heroContainer">
         <div className="heroTitle">
-            <h1>
-                <section>
-                    <motion.span initial={{y: -10, opacity: 0}} animate={{y:0,opacity: 1}} transition={{duration:.2,delay: .1}}>Genshin</motion.span> 
-                    <motion.span initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:.2,delay: .2}}>Impact</motion.span>
-                </section>
-                <section>
-                    <motion.span initial={{x: -10,opacity: 0}} animate={{x:0,opacity: 1}} transition={{duration:.2, delay: .3}}>remarkable</motion.span> 
-                    <motion.span initial={{x: 10,opacity: 0}} animate={{x:0,opacity: 1}} transition={{duration:.2, delay: .4}}> teams</motion.span>
-                </section>
-                </h1>
-        </div>
-        <div className="heroButton">
-            <Link to="/teams">Browse</Link>
+            <AnimatePresence>
+                {Greeting 
+                ?
+                <motion.h1 
+                initial={{opacity: 0, y: 30}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{duration: .5}}>Hello</motion.h1>
+                :
+                <>
+                    <motion.h1 
+                    initial={{opacity: 0, y: -30}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: .5}}>Loading your teams</motion.h1>
+                    <section>
+                        <motion.div initial={{opacity: 0, y: 30}}
+                                    whileInView={{opacity: 1, y: 0}}
+                                    transition={{duration: .5, delay: .5}}></motion.div>
+                        <motion.div initial={{opacity: 0, y: 30}}
+                                    whileInView={{opacity: 1, y: 0}}
+                                    transition={{duration: .5, delay: 1}}></motion.div>
+                        <motion.div initial={{opacity: 0, y: 30}}
+                                    whileInView={{opacity: 1, y: 0}}
+                                    transition={{duration: .5, delay: 1.5}}></motion.div>
+                    </section>
+                </>
+                }
+            </AnimatePresence>
         </div>
     </div>
   )
