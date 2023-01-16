@@ -30,8 +30,8 @@ const TeamsPage = () => {
         <motion.div className="memberWrapper">
           <motion.div className="memberContent">
             <div className="member1st">
-              <motion.img 
-                src={ParsedData[Current].data.portrait} 
+              <motion.img
+                src={ParsedData[Current].data.portrait}
                 alt="Portrait" 
                 initial={{opacity: 0, x: -40}} 
                 whileInView={{opacity: 1, x: 0}} 
