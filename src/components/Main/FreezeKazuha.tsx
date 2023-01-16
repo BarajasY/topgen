@@ -3,6 +3,7 @@ import Context from '../../CharactersContext'
 import { CharactersContextInterface } from '../../types'
 import { Link} from 'react-router-dom';
 import './Main.css';
+import { motion } from 'framer-motion';
 const FreezeKazuha = () => {
 
     const {FreezeKazuha} = useContext(Context) as CharactersContextInterface
@@ -10,6 +11,8 @@ const FreezeKazuha = () => {
 
 
   return (
+    <motion.div className="animatableDiv" initial={{opacity: 0, y: -10}} whileInView={{opacity: 1, y:0}} transition={{delay: .17}}>
+
     <Link to='./FreezeKazuha' id="teamsWrapper" onClick={() =>  handleClick(FreezeKazuha)}>
       <Link to='./FreezeKazuha' onClick={() => handleClick(FreezeKazuha)}>FreezeKazuha</Link>
       {FreezeKazuha.map((d,i) => (
@@ -20,6 +23,8 @@ const FreezeKazuha = () => {
         </div>
       ))}
   </Link>
+  </motion.div>
+
   )
 }
 

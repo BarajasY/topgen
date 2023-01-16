@@ -3,12 +3,15 @@ import Context from '../../CharactersContext'
 import { Link} from 'react-router-dom';
 import { CharactersContextInterface } from '../../types'
 import './Main.css';
+import { motion } from 'framer-motion';
 const XiaoDG = () => {
     const {XiaoDoubleGeo} = useContext(Context) as CharactersContextInterface
     const {handleClick} = useContext(Context) as CharactersContextInterface
   return (
-    <Link to='./ShinraTensei' id="teamsWrapper" onClick={() => handleClick(XiaoDoubleGeo)}>
-        <Link to='./ShinraTensei' onClick={() => handleClick(XiaoDoubleGeo)}>Xiao Double Geo</Link>
+    <motion.div className="animatableDiv" initial={{opacity: 0, y: -10}} whileInView={{opacity: 1, y:0}} transition={{delay: .21}}>
+
+    <Link to='./XiaoDG' id="teamsWrapper" onClick={() => handleClick(XiaoDoubleGeo)}>
+        <Link to='./XiaoDG' onClick={() => handleClick(XiaoDoubleGeo)}>Xiao Double Geo</Link>
         {XiaoDoubleGeo.map((d,i) => (
           <div className="characterCard" key={i}>
             <img src={d.data.icon} alt={d.data.name} />
@@ -17,6 +20,8 @@ const XiaoDG = () => {
           </div>
         ))}
       </Link>
+      </motion.div>
+
   )
 }
 

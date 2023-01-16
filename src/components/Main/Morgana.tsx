@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React, { useContext } from 'react'
 import { Link} from 'react-router-dom';
 import Context from '../../CharactersContext'
@@ -10,6 +11,8 @@ const Morgana = () => {
   const {handleClick} = useContext(Context) as CharactersContextInterface
 
   return (
+    <motion.div className="animatableDiv" initial={{opacity: 0, y: -10}} whileInView={{opacity: 1, y:0}} transition={{delay: .11}}>
+
     <Link to='./Morgana' id="teamsWrapper" onClick={() =>  handleClick(Morgana)}>
             <Link to='./Morgana' onClick={() => handleClick(Morgana)}>Morgana</Link>
             {Morgana.map((d,i) => (
@@ -20,6 +23,8 @@ const Morgana = () => {
               </div>
             ))}
     </Link>
+    </motion.div>
+
   )
 }
 
