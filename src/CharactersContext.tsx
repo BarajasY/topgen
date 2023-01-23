@@ -14,7 +14,6 @@ export const ContextProvider = ({children}:ChildrenInterface) => {
         getDocs(charactersColl).then(res => {
           const charactersData = res.docs.map(doc => ({data: doc.data(), id:doc.id}))
           setCharacters(charactersData)
-          console.log(Characters)
         })
         .catch(err => console.log(err));
       }
@@ -35,9 +34,10 @@ export const ContextProvider = ({children}:ChildrenInterface) => {
       const Sukokomon = Characters.filter(d => d.data.name === "Sucrose" || d.data.name === "Sangonomiya Kokomi" || d.data.name === "Fischl" || d.data.name === "Xiangling")
       const XiaoDoubleGeo = Characters.filter(d => d.data.name === "Xiao" || d.data.name === "Jean" || d.data.name === "Albedo" || d.data.name === "Zhongli")
       const RaidenSunfire = Characters.filter(d => d.data.name === "Raiden Shogun" || d.data.name === "Kujou Sara" || d.data.name === "Bennett" || d.data.name === "Jean")
+      const AllTeams = [Morgana, International, BaalNational, MeltYu, NilouBloom, DHHZ, FreezeKazuha, ChildeInternational, ShinraTensei, Sukokomon, XiaoDoubleGeo, RaidenSunfire]
 
     return (
-        <Context.Provider value={{Characters, setCharacters, getData, Morgana, International, BaalNational, MeltYu, NilouBloom, DHHZ, SelectedTeam, setSelectedTeam, handleClick, FreezeKazuha, ChildeInternational, ShinraTensei, Sukokomon, XiaoDoubleGeo, RaidenSunfire }}>
+        <Context.Provider value={{Characters, setCharacters, getData, Morgana, International, BaalNational, MeltYu, NilouBloom, DHHZ, SelectedTeam, setSelectedTeam, handleClick, FreezeKazuha, ChildeInternational, ShinraTensei, Sukokomon, XiaoDoubleGeo, RaidenSunfire, AllTeams }}>
             {children}
         </Context.Provider>
     )

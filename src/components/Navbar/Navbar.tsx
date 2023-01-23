@@ -17,7 +17,10 @@ const Navbar = () => {
 
   return (
     <div className="navbarContainer">
-        <Link to='/teams'></Link>
+        <Link to='/teams' id="home"></Link>
+        <div className="links">
+          <Link to='/search' className="searchButton">Search</Link>
+        </div>
     </div>
   )
 }

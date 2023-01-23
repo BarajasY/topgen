@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Hero, Main, TeamsPage, Navbar} from './components/Index';
+import {Hero, Main, TeamsPage, Navbar, Search} from './components/Index';
 import {Routes, Route, BrowserRouter} from 'react-router-dom';
 import {ContextProvider} from './CharactersContext';
 
@@ -14,6 +14,7 @@ function App() {
               <Routes> 
                 <Route path="/" element={<><Hero/></>}/>
                 <Route path="/teams" element={<><Main/></>}/>
+                <Route path="/search" element={<><Search/></>}/>
                 <Route path="/teams/:team" element={<><TeamsPage/></>}/>
               </Routes>
           </BrowserRouter>

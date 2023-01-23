@@ -22,13 +22,15 @@ const Hero = () => {
   return (
     <div className="heroContainer">
         <div className="heroTitle">
-            <AnimatePresence>
                 {Greeting 
                 ?
-                <motion.h1 
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: .5}}>Hello</motion.h1>
+                <AnimatePresence>
+                    <motion.h1 
+                    initial={{opacity: 0, y: 30}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: .5}}
+                    exit={{opacity: 0}}>Hello</motion.h1>
+                </AnimatePresence>
                 :
                 <>
                     <motion.h1 
@@ -48,7 +50,6 @@ const Hero = () => {
                     </section>
                 </>
                 }
-            </AnimatePresence>
         </div>
     </div>
   )

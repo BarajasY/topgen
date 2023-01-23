@@ -34,4 +34,9 @@ export interface CharactersContextInterface {
     Sukokomon: DataInterface[]
     XiaoDoubleGeo: DataInterface[]
     RaidenSunfire: DataInterface[]
+    AllTeams: Characters[]
+}
+
+export type ArrayString = {
+    name: string
 }

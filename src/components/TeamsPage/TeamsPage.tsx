@@ -1,7 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
 import {AiOutlineArrowRight} from 'react-icons/ai'
-/* import { DataInterface } from '../../types'; */
 import './TeamsPage.css';
 
 const TeamsPage = () => {

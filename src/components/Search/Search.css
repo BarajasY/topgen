@@ -1,0 +1,89 @@
+.searchContainer {
+    width: 100vw;
+    height: fit-content;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.searchQuote {
+    margin-top: 60px;
+}
+
+.searchQuote h1 {
+    font-weight: 800;
+    font-size: 3vw;
+}
+
+.searchTeams {
+    display: flex;
+    width: 90%;
+    margin: 40px 0px;
+}
+
+.searchIcons {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+.searchIcons section { transition: .2s;}
+
+.searchIcons section:hover {
+    transform: translateY(-5px);
+}
+
+.searchIcons section:hover #searchBlur {
+    opacity: 1;
+}
+
+.searchIcons img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#searchBlur {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    filter: blur(5px);
+    z-index: -1;
+    transform: translateY(-115%) translateX(10%);
+    transition: .5s;
+}
+
+.searchResult {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.visible {
+    opacity: 1
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.searchButton button{
+    font-size: 20px;
+    background: none;
+    border: 2px solid transparent;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.searchButton {
+    margin-bottom: 30px;
+}

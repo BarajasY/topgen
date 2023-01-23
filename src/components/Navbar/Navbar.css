@@ -3,14 +3,14 @@
     height: 50px;
     max-width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     background: none;
     position: fixed;
     z-index: 1;
 }
 
-.navbarContainer a {
+#home {
     text-decoration: none;
     background-image: repeating-linear-gradient(90deg, hsla(57,0%,42%,0.09) 0px, hsla(57,0%,42%,0.09) 1px,transparent 1px, transparent 60px),repeating-linear-gradient(0deg, hsla(57,0%,42%,0.09) 0px, hsla(57,0%,42%,0.09) 1px,transparent 1px, transparent 60px),repeating-linear-gradient(0deg, hsla(57,0%,42%,0.09) 0px, hsla(57,0%,42%,0.09) 1px,transparent 1px, transparent 10px),repeating-linear-gradient(90deg, hsla(57,0%,42%,0.09) 0px, hsla(57,0%,42%,0.09) 1px,transparent 1px, transparent 10px),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20));
     width: 30px;
@@ -25,31 +25,29 @@
     border: 2px solid black;
 }
 
-.navbarContainer a:hover {
+#home:hover {
     background: white;
     box-shadow: 5px 5px 10px black;
 }
 
-/* .navbarContainer a:hover:after {
-    transform: translate(0);
+.links {
+    width: 10%;
 }
 
-.navbarContainer a:after {
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    content: 'G';
-    display: block;
-    color: white;
+.searchButton {
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid transparent;
+    background: white;
+    font-family: 'Inter';
+    font-weight: 800;
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
     transition: .2s;
-    transform: translateY(-200%);
 }
 
-.navbarContainer a:hover:after {
-    width: 100%;
-} */
+.searchButton:hover {
+    border: 2px solid black;
+}
