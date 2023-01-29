@@ -1,36 +1,35 @@
 /* import { motion } from 'framer-motion'; */
 import React from 'react';
-import International from './International';
-import Morgana from './Morgana';
-import BaalNational from './BaalNational';
-import MeltYu from './MeltYu';
-import NilouBloom from './NilouBloom';
-import DoubleHydro from './DoubleHydro';
-import FreezeKazuha from './FreezeKazuha'
-import ChildeInternational from './ChildeInternational';
-import ShinraTensei from './ShinraTensei';
-import Sukokomon from './Sukokomon';
-import XiaoDG from './XiaoDG';
-import RaidenSunfire from './RaidenSunfire';
+import { CharactersContextInterface, DataInterface } from '../../types';
+import Context from '../../CharactersContext';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import './Main.css';
 
 const Main = () => {
 
+  const {AllTeams} = useContext(Context) as CharactersContextInterface
+  const {handleClick} = useContext(Context) as CharactersContextInterface
+  console.log(AllTeams)
+
   return (
     <div className="mainContainer">
         <div className="mainTeams">
-          <Morgana/>
-          <International/>
-          <BaalNational/>
-          <MeltYu/>
-          <NilouBloom/>
-          <DoubleHydro/>
-          <FreezeKazuha/>
-          <ChildeInternational/>
-          <ShinraTensei/>
-          <Sukokomon/>
-          <XiaoDG/>
-          <RaidenSunfire/>
+          {AllTeams.map((data, i) => (
+            <motion.div className="animatableDiv" key={i} initial={{opacity: 0, y: -10}} whileInView={{opacity: 1, y:0}} transition={{delay: .12}}>
+            <Link to={data.uri} id="teamsWrapper" onClick={() =>  handleClick(data.members[0])}>
+              <Link to={data.uri} onClick={() => handleClick(data.members[0])}>{data.team}</Link>
+              {data.members[0].map((d:DataInterface,i:number) => (
+                <div className="characterCard" key={i}>
+                  <img src={d.data.icon} alt={d.data.name} />
+                  <img src={d.data.element_i} alt={d.data.name} />
+                  <div className="backgroundGradient" style={{background: `${d.data.gradient}`}} ></div>
+                </div>
+              ))}
+             </Link>
+            </motion.div>
+          ))}
         </div>
     </div>
   )

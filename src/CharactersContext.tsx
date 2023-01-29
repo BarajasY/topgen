@@ -22,18 +22,31 @@ export const ContextProvider = ({children}:ChildrenInterface) => {
       sessionStorage.setItem('SelectedTeam', JSON.stringify(A))
     }
 
-      const Morgana = Characters.filter(d => d.data.name === "Ganyu" || d.data.name === "Mona" || d.data.name === "Diona" || d.data.name === "Venti")
-      const International = Characters.filter(d => d.data.name === "Bennett" || d.data.name === "Xingqiu" || d.data.name === "Chongyun" || d.data.name === "Xiangling")
-      const BaalNational = Characters.filter(d => d.data.name === "Bennett" || d.data.name === "Xingqiu" || d.data.name === "Raiden Shogun" || d.data.name === "Xiangling")
-      const MeltYu = Characters.filter(d => d.data.name === "Bennett" || d.data.name === "Ganyu" || d.data.name === "Zhongli" || d.data.name === "Xiangling")
-      const NilouBloom = Characters.filter(d => d.data.name === "Nilou" || d.data.name === "Nahida" || d.data.name === "Sangonomiya Kokomi" || d.data.name === "Yelan")
-      const DHHZ = Characters.filter(d => d.data.name === "Hu Tao" || d.data.name === "Yelan" || d.data.name === "Xingqiu" || d.data.name === "Zhongli")
-      const FreezeKazuha = Characters.filter(d => d.data.name === "Ayaka" || d.data.name === "Ganyu" || d.data.name === "Kaedehara Kazuha" || d.data.name === "Sangonomiya Kokomi")
-      const ChildeInternational = Characters.filter(d => d.data.name === "Tartaglia" || d.data.name === "Bennett" || d.data.name === "Kaedehara Kazuha" || d.data.name === "Xiangling")
-      const ShinraTensei = Characters.filter(d => d.data.name === "Ayaka" || d.data.name === "Sangonomiya Kokomi" || d.data.name === "Rosaria" || d.data.name === "Kaedehara Kazuha")
-      const Sukokomon = Characters.filter(d => d.data.name === "Sucrose" || d.data.name === "Sangonomiya Kokomi" || d.data.name === "Fischl" || d.data.name === "Xiangling")
-      const XiaoDoubleGeo = Characters.filter(d => d.data.name === "Xiao" || d.data.name === "Jean" || d.data.name === "Albedo" || d.data.name === "Zhongli")
-      const RaidenSunfire = Characters.filter(d => d.data.name === "Raiden Shogun" || d.data.name === "Kujou Sara" || d.data.name === "Bennett" || d.data.name === "Jean")
+      const Morgana = {team: "Morgana", uri: "Morgana",
+          members: [Characters.filter(d => d.data.name === "Ganyu" || d.data.name === "Mona" || d.data.name === "Diona" || d.data.name === "Venti")]}
+      const International = {team: "International", uri:"International", 
+          members: [Characters.filter(d => d.data.name === "Bennett" || d.data.name === "Xingqiu" || d.data.name === "Chongyun" || d.data.name === "Xiangling")]}
+      const BaalNational = {team: "BaalNational", uri:"BaalNational",
+          members: [Characters.filter(d => d.data.name === "Bennett" || d.data.name === "Xingqiu" || d.data.name === "Raiden Shogun" || d.data.name === "Xiangling")]}
+      const MeltYu = {team:"MeltYu", uri:"MeltYu" ,
+          members: [Characters.filter(d => d.data.name === "Bennett" || d.data.name === "Ganyu" || d.data.name === "Zhongli" || d.data.name === "Xiangling")]}
+      const NilouBloom = {team: "NilouBloom", uri: "NilouBloom", 
+          members: [Characters.filter(d => d.data.name === "Nilou" || d.data.name === "Nahida" || d.data.name === "Sangonomiya Kokomi" || d.data.name === "Yelan")]}
+      const DHHZ = {team: "Double Hydro Hu Tao-Zhongli", uri:"DHHZ" ,
+          members: [Characters.filter(d => d.data.name === "Hu Tao" || d.data.name === "Yelan" || d.data.name === "Xingqiu" || d.data.name === "Zhongli")]}
+      const FreezeKazuha = {team: "FreezeKazuha", uri:"FreezeKazuha", 
+          members: [Characters.filter(d => d.data.name === "Ayaka" || d.data.name === "Ganyu" || d.data.name === "Kaedehara Kazuha" || d.data.name === "Sangonomiya Kokomi")]}
+      const ChildeInternational = {team:"ChildeInternational", uri:"ChildeInternational", 
+          members: [Characters.filter(d => d.data.name === "Tartaglia" || d.data.name === "Bennett" || d.data.name === "Kaedehara Kazuha" || d.data.name === "Xiangling")]}
+      const ShinraTensei = {team: "ShinraTensei", uri: "ShinraTensei", 
+          members: [Characters.filter(d => d.data.name === "Ayaka" || d.data.name === "Sangonomiya Kokomi" || d.data.name === "Rosaria" || d.data.name === "Kaedehara Kazuha")]}
+      const Sukokomon = {team:"Sukokomon", uri:"Sukokomon", 
+          members: [Characters.filter(d => d.data.name === "Sucrose" || d.data.name === "Sangonomiya Kokomi" || d.data.name === "Fischl" || d.data.name === "Xiangling")]}
+      const XiaoDoubleGeo = {team:"Xiao Double Geo", uri:"XiaoDG", 
+          members: [Characters.filter(d => d.data.name === "Xiao" || d.data.name === "Jean" || d.data.name === "Albedo" || d.data.name === "Zhongli")]}
+      const RaidenSunfire = {team:"RaidenSunfire", uri:"RaidenSunfire", 
+          members: [Characters.filter(d => d.data.name === "Raiden Shogun" || d.data.name === "Kujou Sara" || d.data.name === "Bennett" || d.data.name === "Jean")]}
+
       const AllTeams = [Morgana, International, BaalNational, MeltYu, NilouBloom, DHHZ, FreezeKazuha, ChildeInternational, ShinraTensei, Sukokomon, XiaoDoubleGeo, RaidenSunfire]
 
     return (

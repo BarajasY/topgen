@@ -1,12 +1,16 @@
 import React, { useContext, useState } from 'react';
 import Context from '../../CharactersContext';
 import { CharactersContextInterface, DataInterface } from '../../types';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './Search.css';
 
 const Search = () => {
     const [SelectedOnes, setSelectedOnes] = useState<string[]>([''])
+    const [TeamsThatFit, setTeamsThatFit] = useState<CharactersContextInterface[]>([])
 
     const {Characters} = useContext(Context) as CharactersContextInterface;
+    const {handleClick} = useContext(Context) as CharactersContextInterface
     const {AllTeams} = useContext(Context) as CharactersContextInterface
 
     const fillArray = (name:string) => {
@@ -20,10 +24,18 @@ const Search = () => {
     }
 
     const SearchTeams = () => {
+        setTeamsThatFit([])
         AllTeams.map(a => {
-            a.map((b:DataInterface) => {
-                console.log(b.data.name)
-            })
+            if(SelectedOnes.some(b => b === a.members[0][0].data.name)){
+                if(SelectedOnes.some(b => b === a.members[0][1].data.name)){
+                    if(SelectedOnes.some(b => b === a.members[0][2].data.name)){
+                        if(SelectedOnes.some(b => b === a.members[0][3].data.name)){
+                            setTeamsThatFit(old => [...old, a])
+                        }
+                    }
+                }
+            }
+            return TeamsThatFit
         })
     }
 
@@ -42,9 +54,20 @@ const Search = () => {
                     ))}
             </div>
             <div className="searchResult">
-                {SelectedOnes.map(a => (
-                    <h1>{a}</h1>
-                ))}
+                {TeamsThatFit.map(a => (
+                    <motion.div className="animatableDiv" initial={{opacity: 0, y: -10}} whileInView={{opacity: 1, y:0}} transition={{delay: .18}}>
+                        <Link to={a.uri} id="teamsWrapper" onClick={() => handleClick(a.members[0])}>
+                        <Link to={a.uri} onClick={() => handleClick(a.members[0])}>{a.team}</Link>
+                        {a.members[0].map((d:DataInterface,i:number) => (
+                            <div className="characterCard" key={i}>
+                            <img src={d.data.icon} alt={d.data.name} />
+                            <img src={d.data.element_i} alt={d.data.name} />
+                            <div className="backgroundGradient" style={{background: `${d.data.gradient}`}}></div>
+                            </div>
+                        ))}
+                        </Link>
+                    </motion.div>
+                    ))}
             </div>
         </div>
         <div className="searchButton">

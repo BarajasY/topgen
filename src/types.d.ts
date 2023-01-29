@@ -5,6 +5,10 @@ export interface DataInterface {
     data: DocumentData
 }
 
+export type TestInterface = {
+    data: DocumentData
+}
+
 export interface CharactersInterface {
     Characters: DocumentData
 }
@@ -20,21 +24,10 @@ export interface CharactersContextInterface {
     setSavedTeam: (value: DataInterface[]) => void
     handleClick: (A:DataInterface[]) => void
     getData: () => DataInterface[]
-    Morgana: DataInterface[]
-    International: DataInterface[]
-    BaalNational: DataInterface[]
-    MeltYu: DataInterface[]
-    NilouBloom: DataInterface[]
-    DHHZ: DataInterface[]
-    SelectedTeam: DataInterface[]
-    SavedTeam: DataInterface[]
-    FreezeKazuha: DataInterface[]
-    ChildeInternational: DataInterface[]
-    ShinraTensei: DataInterface[]
-    Sukokomon: DataInterface[]
-    XiaoDoubleGeo: DataInterface[]
-    RaidenSunfire: DataInterface[]
     AllTeams: Characters[]
+    uri: string
+    team: string
+    members: any
 }
 
 export type ArrayString = {
