@@ -13,16 +13,6 @@ const Search = () => {
     const {handleClick} = useContext(Context) as CharactersContextInterface
     const {AllTeams} = useContext(Context) as CharactersContextInterface
 
-    const fillArray = (name:string) => {
-        if(SelectedOnes.some(a => a === name)){
-            // Add the character to an array if it's not already present.
-            setSelectedOnes(SelectedOnes.filter(a => a !== name))
-        } else {
-            // Remove the character from the array if it's already present.
-            setSelectedOnes(old => [...old, name])
-        }
-    }
-
     const SearchTeams = () => {
         setTeamsThatFit([])
         AllTeams.map(a => {
@@ -37,6 +27,17 @@ const Search = () => {
             }
             return TeamsThatFit
         })
+    }
+
+    const fillArray = (name:string) => {
+        if(SelectedOnes.some(a => a === name)){
+            // Add the character to an array if it's not already present.
+            setSelectedOnes(SelectedOnes.filter(a => a !== name))
+        } else {
+            // Remove the character from the array if it's already present.
+            setSelectedOnes(old => [...old, name])
+        }
+        SearchTeams()
     }
 
   return (
