@@ -136,6 +136,24 @@
         margin-bottom: 20px;
     }
 
+    .searchFilter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: fit-content;
+        flex-wrap: wrap;
+    }
+
+    .filter {
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    .iconsContainer { 
+        width: 100%;
+    }
+
     .searchIcons img, #searchBlur {
         width: 70px;
         height: 70px;
