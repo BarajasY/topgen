@@ -11,7 +11,6 @@ const Main = () => {
 
   const {AllTeams} = useContext(Context) as CharactersContextInterface
   const {handleClick} = useContext(Context) as CharactersContextInterface
-  console.log(AllTeams)
 
   return (
     <div className="mainContainer">

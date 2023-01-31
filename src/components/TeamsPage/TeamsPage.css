@@ -76,7 +76,7 @@
 }
 
 #CharacterName {
-    font-size: 6vw;
+    font-size: 5.5vw;
     font-family: 'Noto Sans JP';
     text-align: justify;
     z-index: 1;
@@ -87,7 +87,7 @@
 }
 
 .CharacterJP {
-    font-size: 6vw;
+    font-size: 5.5vw;
     z-index: 0;
     font-family: 'Noto Sans JP';
     text-align: justify;

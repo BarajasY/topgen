@@ -31,7 +31,7 @@
 }
 
 .links {
-    width: 20%;
+    width: 10%;
 }
 
 .searchButton {
@@ -50,4 +50,10 @@
 
 .searchButton:hover {
     border: 2px solid black;
+}
+
+@media only screen and (max-width: 991px) {
+    .links {
+        width: 15%;
+    }
 }

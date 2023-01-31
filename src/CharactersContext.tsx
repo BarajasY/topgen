@@ -7,6 +7,7 @@ export const Context = createContext({})
 
 export const ContextProvider = ({children}:ChildrenInterface) => {
     const [Characters, setCharacters] = useState<DataInterface[]>([])
+    const [AuxCharacters, setAuxCharacters] = useState<DataInterface[]>([])
     const [SelectedTeam, setSelectedTeam] = useState<DataInterface[]>([])
 
     const getData =() => {
@@ -14,6 +15,7 @@ export const ContextProvider = ({children}:ChildrenInterface) => {
         getDocs(charactersColl).then(res => {
           const charactersData = res.docs.map(doc => ({data: doc.data(), id:doc.id}))
           setCharacters(charactersData)
+          setAuxCharacters(charactersData)
         })
         .catch(err => console.log(err));
       }
@@ -50,7 +52,7 @@ export const ContextProvider = ({children}:ChildrenInterface) => {
       const AllTeams = [Morgana, International, BaalNational, MeltYu, NilouBloom, DHHZ, FreezeKazuha, ChildeInternational, ShinraTensei, Sukokomon, XiaoDoubleGeo, RaidenSunfire]
 
     return (
-        <Context.Provider value={{Characters, setCharacters, getData, Morgana, International, BaalNational, MeltYu, NilouBloom, DHHZ, SelectedTeam, setSelectedTeam, handleClick, FreezeKazuha, ChildeInternational, ShinraTensei, Sukokomon, XiaoDoubleGeo, RaidenSunfire, AllTeams }}>
+        <Context.Provider value={{Characters, setCharacters, AuxCharacters, setAuxCharacters, getData, SelectedTeam, setSelectedTeam, handleClick, AllTeams }}>
             {children}
         </Context.Provider>
     )

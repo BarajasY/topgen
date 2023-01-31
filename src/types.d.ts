@@ -19,7 +19,10 @@ export interface ChildrenInterface {
 
 export interface CharactersContextInterface {
     Characters: DataInterface[]
+    AuxCharacters: DataInterface[]
+    data: DocumentData
     setCharacters: (value: DataInterface[]) => void
+    setAuxCharacters: (value: DataInterface[]) => void
     setSelectedTeam: (value: DataInterface[]) => void
     setSavedTeam: (value: DataInterface[]) => void
     handleClick: (A:DataInterface[]) => void
