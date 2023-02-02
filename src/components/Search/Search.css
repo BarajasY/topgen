@@ -39,6 +39,7 @@
     font-size: 1vw;
     transition: .2s;
     border: 2px solid transparent;
+    font-weight: 800;
 }
 
 .filter:hover {
