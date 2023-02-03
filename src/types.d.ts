@@ -18,6 +18,7 @@ export interface ChildrenInterface {
 }
 
 export interface CharactersContextInterface {
+    Teams: DataInterface[]
     Characters: DataInterface[]
     AuxCharacters: DataInterface[]
     data: DocumentData
@@ -25,12 +26,16 @@ export interface CharactersContextInterface {
     setAuxCharacters: (value: DataInterface[]) => void
     setSelectedTeam: (value: DataInterface[]) => void
     setSavedTeam: (value: DataInterface[]) => void
+    setAllTeams: (value: DataInterface[]) => void
+    formTeams: (value: DataInterface[]) => void
     handleClick: (A:DataInterface[]) => void
     getData: () => DataInterface[]
+    getTeams: () => DataInterface[]
     AllTeams: Characters[]
     uri: string
-    team: string
+    name: string
     members: any
+    membersInfo: DataInterface[]
 }
 
 export type ArrayString = {

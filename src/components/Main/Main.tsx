@@ -15,11 +15,11 @@ const Main = () => {
   return (
     <div className="mainContainer">
         <div className="mainTeams">
-          {AllTeams.map((data, i) => (
+          {AllTeams.map((team, i) => (
             <motion.div className="animatableDiv" key={i} initial={{opacity: 0, y: -10}} whileInView={{opacity: 1, y:0}} transition={{delay: .12}}>
-            <Link to={data.uri} id="teamsWrapper" onClick={() =>  handleClick(data.members[0])}>
-              <Link to={data.uri} onClick={() => handleClick(data.members[0])}>{data.team}</Link>
-              {data.members[0].map((d:DataInterface,i:number) => (
+            <Link to={team.data.uri} id="teamsWrapper" onClick={() =>  handleClick(team.data.membersInfo)}>
+              <Link to={team.data.uri} onClick={() => handleClick(team.data.membersInfo)}>{team.data.name}</Link>
+              {team.data.membersInfo.map((d:DataInterface,i:number) => (
                 <div className="characterCard" key={i}>
                   <img src={d.data.icon} alt={d.data.name} />
                   <img src={d.data.element_i} alt={d.data.name} />

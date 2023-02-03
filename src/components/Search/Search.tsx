@@ -21,13 +21,14 @@ const Search = () => {
         AllTeams.map(team => {
             // Each team has 4 members, here i am comparing each team member using the .some function to see if all 4 members appear
             // in the array selected by the user.
-            if(SelectedOnes.some(b => b === team.members[0][0].data.name)){
-                if(SelectedOnes.some(b => b === team.members[0][1].data.name)){
-                    if(SelectedOnes.some(b => b === team.members[0][2].data.name)){
-                        if(SelectedOnes.some(b => b === team.members[0][3].data.name)){
+            if(SelectedOnes.some(b => b === team.data.membersInfo[0].data.name)){
+                if(SelectedOnes.some(b => b === team.data.membersInfo[1].data.name)){
+                    if(SelectedOnes.some(b => b === team.data.membersInfo[2].data.name)){
+                        if(SelectedOnes.some(b => b === team.data.membersInfo[3].data.name)){
                             // In case all 4 members of a team appear in the user's array the team is automatically enlisted.
                             // to then appear in the screen.
-                            setTeamsThatFit(old => [...old, team])
+                            setTeamsThatFit(old => [...old, team.data])
+                            console.log(TeamsThatFit)
                         }
                     }
                 }
@@ -87,15 +88,15 @@ const Search = () => {
             <div className="searchResult">
                 {TeamsThatFit.map((a, i) => (
                     <motion.div className="animatableDiv" key={i} initial={{opacity: 0, y: -10}} whileInView={{opacity: 1, y:0}} transition={{delay: .18}}>
-                        <Link to={a.uri} id="teamsWrapper" onClick={() => handleClick(a.members[0])}>
-                        <Link to={a.uri} onClick={() => handleClick(a.members[0])}>{a.team}</Link>
-                        {a.members[0].map((d:DataInterface,i:number) => (
-                            <div className="characterCard" key={i}>
-                            <img src={d.data.icon} alt={d.data.name} />
-                            <img src={d.data.element_i} alt={d.data.name} />
-                            <div className="backgroundGradient" style={{background: `${d.data.gradient}`}}></div>
-                            </div>
-                        ))}
+                        <Link to={a.uri} id="teamsWrapper" onClick={() => handleClick(a.membersInfo)}>
+                            <Link to={a.uri} onClick={() => handleClick(a.membersInfo)}>{a.name}</Link>
+                            {a.membersInfo.map((d:DataInterface,i:number) => (
+                                <div className="characterCard" key={i}>                                                                                           
+                                <img src={d.data.icon} alt={d.data.name} />
+                                <img src={d.data.element_i} alt={d.data.name} />
+                                <div className="backgroundGradient" style={{background: `${d.data.gradient}`}}></div>
+                                </div>
+                            ))}
                         </Link>
                     </motion.div>
                     ))}

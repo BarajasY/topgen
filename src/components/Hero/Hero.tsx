@@ -16,9 +16,6 @@ const Hero = () => {
         }, 3000);
     }, [navigate])
     
-    
-
-
   return (
     <div className="heroContainer">
         <div className="heroTitle">

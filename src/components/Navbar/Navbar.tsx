@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const {getData} = useContext(Context) as CharactersContextInterface
+  const {getTeams} = useContext(Context) as CharactersContextInterface
 
   useEffect(() => {
     
     
     getData()
+    getTeams()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

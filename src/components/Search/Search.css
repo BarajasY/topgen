@@ -46,7 +46,6 @@
     transform: translateY(-5px);
 }
 
-
 #all:hover {color: black; border: 2px solid black}
 #electro:hover {color: var(--electro); border: 2px solid var(--electro)}
 #geo:hover {color: var(--geo); border: 2px solid var(--geo)}
@@ -68,16 +67,6 @@
     justify-content: center;
 }
 
-.searchIcons section { transition: .2s;}
-
-.searchIcons section:hover {
-    transform: translateY(-5px);
-}
-
-.searchIcons section:hover #searchBlur {
-    opacity: 1;
-}
-
 .searchIcons img {
     width: 90px;
     height: 90px;
@@ -92,7 +81,7 @@
     filter: blur(5px);
     z-index: -1;
     transform: translateY(-115%) translateX(10%);
-    transition: .5s;
+    transition: .2s;
     border-radius: 15px;
 }
 
