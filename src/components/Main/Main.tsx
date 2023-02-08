@@ -14,6 +14,7 @@ const Main = () => {
 
   return (
     <div className="mainContainer">
+      <h1 id="mainHeader">Browse all teams or <Link to="/search">Search</Link></h1>
         <div className="mainTeams">
           {AllTeams.map((team, i) => (
             <motion.div className="animatableDiv" key={i} initial={{opacity: 0, y: -10}} whileInView={{opacity: 1, y:0}} transition={{delay: .12}}>
