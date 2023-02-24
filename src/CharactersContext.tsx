@@ -40,8 +40,6 @@ export const ContextProvider = ({children}:ChildrenInterface) => {
         return value;
       })
 
-      console.log(AllTeams)
-
     return (
         <Context.Provider value={{Characters, setCharacters, AuxCharacters, setAuxCharacters, getData, SelectedTeam, setSelectedTeam, handleClick, AllTeams, getTeams, Teams}}>
             {children}
